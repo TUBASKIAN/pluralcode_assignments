@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    list-style-type: none !important;
+}
+
+a{
+    text-decoration: none !important;
+}
+
+header#home{
+    height: 500px;
+    background-color: #37517e;
+    min-height: 83vh;
+}
+
+img{
+    width: 50%;
+}
+
+.hero img{
+    animation: upAndDown 4s ease-in-out infinite;
+}
+
+@keyframes upAndDown {
+    0%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(2em);
+    }
+
+    100%{
+        transform: translateY(0);
+    }
+}
+
+h2{
+    color: #37517e !important;
+}
