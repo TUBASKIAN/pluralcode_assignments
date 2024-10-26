@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>FACEBOOK LOGIN/SIGNUP CLONE</title>
+    <style>
+        /* imported fonts */
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+        /* general styles */
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: 'Poppins', sans-serif;
+            background-color: #f1f1f1;
+        }
+
+        *, *::before, *::after{
+            box-sizing: border-box;
+        }
+
+        /* general images size */
+
+        img{
+            width: 36%;
+        }
+
+        /* section container with flex layout */
+
+        section#flex{
+            width: 70%;
+            margin: 0 auto;
+            transform: translateY(27vh);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* section container left side */
+
+        section#flex .left{
+            width: 58%;
+            padding-right: 2em;
+            padding-bottom: 2.5em;
+        }
+
+        /* facebook logo on the left */
+
+        section#flex .left .logo{
+            padding-bottom: 1em;
+        }
+
+        /* paragraph under the logo */
+
+        section#flex .left p{
+            font-size: 1.5rem;
+            line-height: 1.3em;
+            letter-spacing: .5px;
+        }
+
+        /* section container right side */
+
+        section#flex .right{
+            width: 42%;
+        }
+
+        /* right side form */
+
+        section#flex .right form{
+            padding: 1em;
+            padding-bottom: 2em;
+            background-color: #fff;
+            border-radius: .4em;
+            box-shadow: 5px 5px 15px #dad7d7;
+        }
+
+        /* all child elements of the form general styles */
+
+        section#flex .right form > *{
+            width: 100%;
+            display: block;
+            border-radius: .3em;
+            border: .8px solid #d0c4c4;
+        }
+
+        /* all paragraphs in the form */
+
+        section#flex .right p{
+            text-align: center;
+        }
+
+        /* last child of paragraphs in form (outside form) */
+
+        section#flex .right p:last-child{
+            margin-top: 2em;
+            font-size: .9rem;
+        }
+
+        /* paragraph inside the form */
+
+        section#flex .right form p{
+            color: rgb(36, 131, 219);
+            padding: 1.3em 0;
+            border: 0;
+            font-size: .9rem;
+        }
+
+        /* anchor tag inside paragraph in form */
+
+        section#flex .right form p a{
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* horizontal line in form */
+
+        section#flex .right form hr{
+            margin-bottom: 1.5em;
+            opacity: 30%;
+        }
+
+        /* all inputs in form general styles */
+
+        section#flex .right form input{
+            padding: 1.3em 0 1em .5em;
+            background-color: #f1f1f1;
+        }
+
+        /* spacing btw input in forms */
+
+        section#flex .right form input:not(:first-child){
+            margin: 1.2em 0 1.2em 0;
+        }
+
+        /* form inputs placeholder styles */
+
+        ::placeholder{
+            font-size: 1.1rem;
+            padding-left: .5em;
+            font-weight: 300;
+        }
+
+        /* form button general styles */
+
+        section#flex .right form button{
+            padding: .9em 0;
+            font-size: 1.1rem;
+            text-transform: capitalize;
+            font-weight: 500;
+            color: #fff
+        }
+
+        section#flex .right form button.log-in{
+            background-color: rgb(36, 131, 219);
+        }
+
+        section#flex .right form button.create{
+            background-color: rgb(45, 189, 8);
+            font-size: .9rem;
+            width: 44%;
+            margin: 0 auto;
+            font-weight: bold;
+            padding: .9em .3em;
+        }
+
+        /* RESPONSIVENESS */
+
+        @media screen and (max-width: 960px){
+            section#flex{
+                flex-wrap: wrap;
+                width: 61%;
+                transform: translateY(23vh);
+            }
+
+            section#flex .left,
+            section#flex .right{
+                width: 100%;
+            }
+
+            section#flex .left{
+                padding-right: 0 !important;
+                padding-bottom: 1.5em;
+            }
+
+            section#flex .left .logo{
+                text-align: center;
+            }
+
+            section#flex .left p{
+            font-size: 1.2rem;
+            line-height: 1.3em;
+            letter-spacing: .2px;
+            }
+        }
+
+        @media screen and (max-width: 498px){
+            section#flex{
+                width: 70%;
+                transform: translateY(21vh)
+            }
+
+            section#flex .left p{
+                text-align: center;
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            section#flex .right p:last-child{
+                font-size: .75rem;
+            }
+
+            section#flex .right form button.create{
+                width: 60%;
+                padding: 1em 0;
+            }
+
+            img{
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- flex container -->
+    <section id="flex">
+
+        <!-- content on the left with logo and paragraph -->
+        <div class="left">
+            <!-- logo -->
+            <div class="logo">
+                <img src="https://i.postimg.cc/ZnzLP3mY/Facebook-Logo-2019.png" alt="Facebook-Logo-PNG5">
+            </div>
+            <!-- paragraph under logo -->
+            <p>Facebook helps you connect and share with the people in your life.</p>
+        </div>
+
+        <!-- form on the right -->
+        <div class="right">
+            <!-- form -->
+            <form action="">
+                <input type="email" name="email-and-phone" id="" placeholder="Email address or phone number" required>
+                <input type="password" name="password" id="" placeholder="Password" required>
+                <button class="log-in">log in</button>
+                <p><a href="#">Forgotten password?</a></p>
+                <hr>
+                <button class="create">create a new password</button>
+            </form>
+            <!-- end of form -->
+            <p><b>Create a page</b> for a celebrity, brand or business.</p>
+        </div>
+        <!-- end of form on the right -->
+    </section>
+    <!-- section end -->
+</body>
+</html>
