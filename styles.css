@@ -1,0 +1,131 @@
+/* imported fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+/* root styles */
+
+/* :root{
+    --primary: #14b789;
+    --secondary: #535da1;
+    --tetiary: #f9f9f9;
+    --border-color: #e9eaeb;
+    --text-color: #717275;
+    --uniform-width: 76.5%;
+    --transition: .25s ease-in-out;
+} */
+
+/* general styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    outline: none;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* text highlight background and color styles */
+
+::selection{
+    color: white;
+    background: var(--primary);
+}
+
+/* GENERAL STYLES */
+
+/* layouts */
+
+/* flex layout */
+
+.flex-layout{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* anchor tags */
+
+a{
+    text-decoration: none;
+}
+
+/* texts */
+
+.text{
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.8;
+    letter-spacing: .5px;
+}
+
+/* headers */
+
+/* h2, h3{
+    color: #000;
+    letter-spacing: .3px;
+    font-size: 2em;
+    font-weight: 1000;
+    text-transform: capitalize;
+} */
+
+/* h2{
+    font-size: 2.3em;
+} */
+
+/* h4{
+    font-weight: 1000;
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: .5px;
+} */
+
+/* uniform width */
+
+.width{
+    width: var(--uniform-width);
+    margin: 0 auto;
+}
+
+/* grey backgrounds */
+
+/* .grey-backg{
+    background-color: var(--tetiary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+} */
+
+/* images */
+
+img{
+    width: 100%;
+}
+
+/* buttons */
+
+/* button{
+    width: 147px;
+    padding: 0 20px;
+    height: 53px;
+    letter-spacing: .2px;
+    border-radius: 3em;
+    text-transform: capitalize;
+    font-size: 17.5px;
+    font-weight: 1000;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+} */
