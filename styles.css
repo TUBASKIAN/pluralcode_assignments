@@ -1,0 +1,2003 @@
+/* NOTE: styles are desktop-to-mobile kind... default styles are for desktop(large screens) while the media queriues are for tabs and monbile responsiveness*/
+
+/* imported fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap');
+
+/* root styles */
+
+:root{
+    --primary: #14b789;
+    --secondary: #535da1;
+    --tetiary: #f9f9f9;
+    --border-color: #e9eaeb;
+    --text-color: #717275;
+    --uniform-width: 76.5%;
+    --transition: .25s ease-in-out;
+}
+
+/* general styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    outline: none;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* text highlight background and color styles */
+
+::selection{
+    color: white;
+    background: var(--primary);
+}
+
+/* GENERAL STYLES */
+
+/* layouts */
+
+/* grid layout */
+
+.grid-layout{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.span-6{
+    grid-column: span 6;
+}
+
+/* flex layout */
+
+.flex-layout{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* anchor tags */
+
+a{
+    text-decoration: none;
+    /* color: #000; */
+}
+
+/* texts */
+
+.text{
+    color: var(--text-color);
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.8;
+    letter-spacing: .5px;
+}
+
+/* headers */
+
+h2, h3{
+    color: #000;
+    letter-spacing: .3px;
+    font-size: 2em;
+    font-weight: 1000;
+    text-transform: capitalize;
+}
+
+h2{
+    font-size: 2.3em;
+}
+
+h4{
+    font-weight: 1000;
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: .5px;
+}
+
+/* uniform width */
+
+.width{
+    width: var(--uniform-width);
+    margin: 0 auto;
+}
+
+/* grey backgrounds */
+
+.grey-backg{
+    background-color: var(--tetiary);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* images */
+
+img{
+    width: 100%;
+}
+
+/* buttons */
+
+button{
+    width: 147px;
+    padding: 0 20px;
+    height: 53px;
+    letter-spacing: .2px;
+    border-radius: 3em;
+    text-transform: capitalize;
+    font-size: 17.5px;
+    font-weight: 1000;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+}
+
+/* HEADER AND NAVIGATION */
+
+section#home{
+    height: 49em;
+}
+
+/* background image */
+
+/* section#home .background-image{
+    position: relative;
+} */
+
+section#home .background-image > img{
+   position: absolute;
+   z-index: -1;
+   top: 0;
+   left: 0;
+   width: 100%;
+   margin-top: 7.5px;
+}
+
+/* header */
+
+header{
+    width: 77% !important;
+    padding: 1.2em 1.5em;
+    position: relative;
+    top: 1.5em;
+    z-index: 2;
+}
+
+/* on scroll header functions */
+
+/* header class to make it fixed at the top */
+.sticky{
+    position: fixed !important;
+    top: 1.3em;
+    left: 11%;
+    transition: all .5s;
+    background: #fff;
+    box-shadow: 0px 3px 30px rgba(131, 124, 124, 0.8);
+    border-radius: 10px;
+    height: 5em;
+    align-items: flex-start;
+    width: 80%;
+    margin: 0 auto !important;
+    z-index: 3;
+}
+
+/* header logo alignment*/
+.sticky .logo{
+    color: #000;
+    position: relative;
+    bottom: -4px;
+}
+
+/* header nav alignment */
+.sticky nav{
+    position: relative;
+    top: -.9em;
+}
+
+/* header nav links color */
+.sticky nav a{
+    color: #000;
+}
+
+/* header contact with absolute positions styles */
+.sticky .contact{
+    top: 13px;
+    color: var(--primary);
+}
+
+/* contact phone icon styles */
+.sticky .contact span:first-child{
+    background: var(--primary);
+    color: #fff;
+}
+
+/* header navs li */
+.sticky li{
+    margin: 1.4em 0 1.6em 0;
+    padding-bottom: 5px;
+}
+
+/* header nav li bottom borders */
+.sticky li.border-bottom{
+    border-bottom: 2px solid var(--primary);
+    transition: all .3s;
+}
+
+/* header nav li links */
+.sticky li.border-bottom a{
+    color: var(--primary) !important;
+    transition: all .3s;
+}
+
+/* removal of default border on first link */
+.sticky .first-a{
+    display: none;
+}
+
+/* /* removal of default color from first link */ */
+.sticky .home a{
+    color: #000 !important;
+}
+/* end */
+
+header h1.logo , header nav, header li, header .contact{
+    display: inline-block;
+}
+
+header h1.logo{
+    font-weight: 1000;
+    color: #fff;
+    width: 10%;
+    letter-spacing: .5px;
+}
+
+header nav{
+    width: 40%;
+    margin-left: .5em;
+}
+
+header nav li:not(:first-child){
+    margin-left: 2em;
+}
+
+header nav a{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: .76rem;
+    font-weight: 600;
+    letter-spacing: .1px;
+}
+
+/* active link */
+
+header a[href="#home"]{
+    color: var(--primary);
+}
+
+header .active{
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    margin-top: .4em;
+}
+
+/* header contact */
+
+header .contact{
+    float: right !important;
+    color: #fff;
+    position: absolute;
+    right: 10px;
+}
+
+header .contact span{
+    display: inline-block;
+    border: 2px solid;
+}
+
+/* phone icon */
+header .contact span:first-child{
+    margin-right: 1em;
+    width: 55px;
+    height: 55px;
+    padding: 1em .8em;
+    text-align: center;
+    border-radius: 100%;
+    color: #000;
+    background: #fff;
+    border-width: 0;
+}
+
+header .contact span:last-child{
+    font-weight: 1000;
+    padding: .4em 1.4em .6em 1.4em;
+    height: 45px;
+    font-size: 1.15rem;
+    border-radius: 40px;
+}
+
+header .contact::after{
+    display: block;
+    clear: both;
+}
+
+/* introductory text and profile image */
+
+section#home .home-body{
+    margin-top: 8.5em;
+    height: 30em;
+    /* justify-content: space-between; */
+
+}
+
+/* profile image on the right */
+
+section#home .home-body .profile{
+    position: relative;
+    width: 40%;
+    height: 100%;
+}
+
+/* white circle svg under profile image */
+
+section#home .white-circle{
+    width: 405px;
+    height: 405px;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 3em;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+section#home .home-body .profile img{
+    width: 85%;
+    /* position: relative;
+    right: -33em;
+    top: 2em; */
+    border-radius: 10%;
+    float: right;
+    margin: 20px 30px 0 0;
+}
+
+/* intro text on the left */
+
+section#home .home-body .left{
+    width: 60%;
+    height: 18em;
+    
+}
+
+section#home .home-body .left img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+section#home .home-body .left .image-and-hello{
+    margin-bottom: 1.4em;
+}
+
+/* intro texts */
+
+section#home .home-body .left .image-and-hello h3,
+section#home .home-body p{
+    display: inline-block;
+    background: #fff;
+    padding: .3em .3em;
+    margin-left: .4em;
+    width: 35%;
+    font-size: 2.3rem;
+    letter-spacing: 0;
+    border-radius: 40px;
+    text-align: center;
+}
+
+section#home .home-body p{
+    display: block;
+    margin-left: 0;
+    width: 88.5%;
+    font-weight: 1000;
+    padding: .15em 0;
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+/* intro text button */
+
+section#home .home-body button{
+    background-color: var(--secondary);
+    margin-top: 1.4em;
+}
+
+section#home .home-body button:hover{
+    transition: all .3s;
+    background: var(--primary);
+    box-shadow: 1px 1px 30px 1px #14ab80;
+}
+
+/* END OF HOME SECTION */
+
+/* ABOUT SECTION */
+
+/* about inner container */
+
+section#about .my-story{
+    justify-content: space-between;
+    padding: 5.5em 0;
+    align-items: flex-start;
+}
+
+/* the width of the two elements on left and right */
+
+section#about .my-story .image-on-the-left,
+section#about .my-story .info-on-the-right{
+    width: calc(96.5% / 2);
+}
+
+/* image on the left */
+
+section#about .image-on-the-left img{
+    border-radius: 1.3em;
+}
+
+/* GREEN BACKGROUND GENERAL STYLES */
+
+.green-backg > *{
+    display: inline-block;
+}
+
+.green-backg{
+    text-align: center;
+    position: relative;
+    height: 11em;
+    background: var(--primary);
+    border-radius: .8em;
+}
+
+/* green backg header */
+
+.green-backg h2{
+    font-weight: 1000;
+    font-size: 3rem;
+    margin: 0 auto;
+    color: #fff;
+    letter-spacing: -2px;
+}
+
+/* green backg profile image */
+
+.green-backg img{
+    width: 25%;
+    float: right;
+    position: absolute;
+    top: .5em;
+    right: 1em;
+    border-radius: 50%;
+    transform: scaleX(-1);
+}
+
+/* second header text */
+
+section#about .info-on-the-right h3{
+    text-transform: lowercase;
+    font-weight: 1000;
+    padding: .7em 0 .3em 0;
+}
+
+/* stats section */
+
+section#about .stats{
+    padding: 7.5em 0;
+}
+
+/* stats table styles */
+
+section#about .information-table{
+    width: 50%;
+}
+
+/* table border */
+
+section#about table,
+section#about td{
+    border: 1px solid #e9eaeb;
+    border-collapse: collapse;
+}
+
+section#about table{
+    width: 100%;
+}
+
+/* table header styles */
+
+section#about th{
+    font-weight: 1000;
+    padding: .5em 0 .5em 1em;
+    font-size: 1.6rem;
+}
+
+/* table data on the left styles */
+
+section#about tr td:first-child{
+    padding: .9em 0 .9em 1.6em;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* table datav on the right styles */
+
+section#about tr td:last-child{
+    padding-left: 1em;
+    font-weight: 500;
+}
+
+/* info stats section styles */
+
+section#about .info-stats{
+    width: 46.5%;
+    margin-left: 3.5%;
+    position: relative;
+}
+
+/* info stats lines */
+
+section#about .info-stats .line{
+    width: 100%;
+    height: 1px;
+    background-color: #e9eaeb;
+    position: absolute;
+}
+
+section#about .info-stats .horizontal-line{
+    margin-bottom: 2.4em;
+    top: 53%;
+    right: 1em;
+}
+
+section#about .info-stats .vertical-line{
+    transform: rotate(90deg);
+    width: 50%;
+    top: 50%;
+    left: 20%;
+}
+
+/* lines end */
+
+/* info stats */
+
+section#about .info-stats .top-and-bottom-num-tag{
+    width: 83%;
+}
+
+section#about .info-stats .num-and-tag{
+    justify-content: space-between;
+}
+
+section#about .info-stats .top{
+    margin-bottom: 1.5em;
+}
+
+section#about .info-stats .number{
+    font-weight: 1000;
+    font-size: 4rem;
+}
+
+section#about .info-stats .tag{
+    font-weight: 1000;
+    color: var(--primary);
+    letter-spacing: .4px;
+}
+/* end of stats section */
+
+/* clients section */
+
+/* clients section inner spacing */
+
+section#about .clients{
+    padding: 7em 0 8em 0;
+    text-align: center;
+}
+
+/* brands worked for logos */
+
+section#about .clients .client-logo{
+    width: 75%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 2.5em;
+}
+
+/* clients header text */
+
+section#about .clients h2{
+    font-weight: 1000;
+    font-size: 2.2rem;
+    letter-spacing: 0;
+}
+
+/* brands logos */
+
+section#about .clients img{
+    width: 100px;
+    transition: var(--transition);
+}
+
+/* brands logo scale transfrom */
+
+section#about .clients img:hover{
+    transform: scale(1.3);
+}
+
+/* end of clients section */
+
+/* END OF ABOUT SECTION */
+
+/* SERVICES SECTION */
+
+/* services section unique width */
+
+section#services .services-inner{
+    width: 63.5%;
+    margin: 0 auto;
+    padding: 7.35em 0;
+}
+
+/* green background position reset to static from general parent styles */
+
+.g-backg,
+.g-backg img{
+    position: static;
+}
+
+.g-backg img{
+    float: none;
+    transform: none;
+    border-radius: 100%;
+    width: 40% !important;
+    height: 160px;
+}
+
+/* green backg inner with flex and unique inner width */
+
+.green-backg-inner{
+    display: flex !important;
+    width: 37%;
+    margin: 0 auto;
+    padding-top: .5em;
+}
+
+/* services groups with flex layout */
+
+section#services .services-group{
+    /* justify-content: space-between; */
+    flex-wrap: nowrap;
+}
+
+/* services groups width and vertical spacing */
+
+section#services .group{
+    width: calc(98% / 2);
+}
+
+section#services .right-group{
+    margin-left: 2%;
+}
+
+/* left group extra spacing from top */
+
+section#services .left-group .each-service:first-child{
+    margin-top: 6em;
+}
+
+/* each service group */
+
+section#services .each-service{
+    padding: 2em 2.5em 0 2.5em;
+    background-color: #fff;
+    height: 31.5em;
+    position: relative;
+    overflow: hidden; /* to hide icon container overflow */
+    border-radius: 20px;
+    transition: .15s linear;
+}
+
+/* each service group horizontal spacing */
+
+section#services .each-service:last-child{
+    margin-top: 1.7em;
+}
+
+/* services heading and price container*/
+
+section#services .heading-price{
+    justify-content: space-between;
+    /* padding-right: 2.5em; */
+    align-items: center;
+}
+
+/* servcices price styles */
+
+section#services .price{
+    width: 90px;
+    height: 35px;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--secondary);
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: .9rem;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+/* edge ball inside price */
+
+section#services .price .edge-ball{
+    display: inline-block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    top: -55%;
+    right: -20%;
+    transition: var(--transition);
+}
+
+/* price tag */
+
+section#services .price span:last-child{
+    margin-left: 1em;
+}
+
+/* services horizontal line */
+
+section#services hr{
+    /* width: 92%; */
+    margin: 1em 0 1.2em 0;
+    opacity: .3;
+}
+
+/* services button */
+
+section#services button{
+    background: #fff;
+    border: 1.5px solid rgba(0, 0, 0, .1);
+    width: 175px;
+    font-size: 17.8px;
+    margin-top: 1.7em;
+    transition: var(--transition);
+}
+
+section#services button:hover{
+    background: var(--primary);
+    border: var(--primary);
+}
+
+section#services button:hover a{
+    color: #fff;
+}
+
+section#services button a{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, .6);
+    transition: color .1s;
+}
+
+/* services icon container */
+
+section#services .service-icon-cover{
+    border: 1px solid rgba(0, 0, 0, 0.082);
+    font-size: 100px;
+    width: 270px;
+    height: 270px;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    right: -5%;
+    bottom: -9%;
+    transform: rotate(-35deg);
+    transition: var(--transition);
+}
+
+/**** each services hover effects ****/
+
+section#services .each-service:hover{
+    outline: 2px solid var(--primary);
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, .1);
+}
+
+section#services .each-service:hover .price{
+    background-color: var(--primary);
+}
+
+section#services .each-service:hover .edge-ball{
+    background-color: var(--secondary);
+}
+
+section#services .each-service:hover .service-icon-cover{
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* END OF SERVICES SECTION */
+
+/* PROJECTS SECTION */
+
+section#projects .projects-inner{
+    padding: 7.5em 0 9em 0;
+}
+
+/* projects head green background styles */
+
+section#projects .g-backg{
+    width: 66.51%;
+    float: right;
+}
+
+section#projects .green-backg-inner{
+    width: 47%;
+}
+
+/* projects container */
+
+section#projects .projects-container{
+    flex-wrap: nowrap;
+    margin-top: 3.6em;
+}
+
+/* each project styles */
+
+section#projects .each-project{
+    width: calc(96% / 3);
+    background-color: #f9f9f9;
+    position: relative;
+    height: 32em;
+    padding: 3.3em 0 0 2.6em;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: .2s linear;
+}
+
+/* each project spacing */
+
+section#projects .each-project:not(:first-child){
+    margin-left: 2%;
+}
+
+/* each project heading texts styles */
+
+section#projects .each-project .type{
+    text-transform: uppercase;
+    font-size: .7rem;
+    color: var(--primary);
+    margin-bottom: .5em;
+}
+
+/* each project image styles */
+
+section#projects .project-image{
+    display: block;
+}
+
+section#projects .each-project img{
+    position: absolute;
+    bottom: -9%;
+    left: 6%;
+    width: 81%;
+    border-radius: 20px;
+    transform: rotate(10deg);
+    transition: .33s ease-in-out;
+}
+
+/* each projects hover effects */
+
+section#projects .each-project:hover{
+    outline: 2px solid var(--primary);
+}
+
+section#projects .each-project:hover img{
+    bottom: 7%;
+    left: 8%;
+    transform: rotate(0deg);
+}
+
+/* END OF PROJECTS SECTION */
+
+/* CONTACTS SECTION */
+
+section#contact .contact-inner{
+    padding: 7.5em 0 7.5em 0;
+}
+
+/* projects head green background styles */
+
+section#contact .g-backg{
+    width: 49%;
+    float: left;
+}
+
+section#contact .green-backg-inner{
+    width: 52%;
+}
+
+section#contact .green-backg-inner img{
+    width: 50% !important;
+}
+
+/* contact info and form container */
+
+section#contact .contact_info-form{
+    margin-top: 2.75em;
+}
+
+/* contact info and form width and spacing */
+
+section#contact .contact_info,
+section#contact form{
+    width: calc(97.5% / 2);
+}
+
+section#contact form{
+    margin-left: 2.5%;
+    align-self: flex-start;
+}
+
+/* contact info */
+
+section#contact .contact_info{
+    flex-wrap: nowrap;
+}
+
+/* each contact info */
+
+section#contact .each-contact-info{
+    width: calc(99.5% / 2);
+    background-color: #fff;
+    padding: 3.8em 2.5em 0 1.9em;
+    height: 28em;
+    border-radius: 20px 0 0 20px;
+}
+
+/* each contact info spacing */
+
+section#contact .each-contact-info:last-child{
+    margin-left: .5%;
+    border-radius: 0 20px 20px 0;
+}
+
+/* each contact info headers */
+
+section#contact h4{
+    font-size: .75rem;
+    margin-bottom: 1.15em;
+}
+
+/* each contact services buttons and icons spacing */
+
+
+section#contact .contact-info-icons,
+section#contact .button-services{
+    margin-bottom: 1.8em;
+}
+
+/* contact info anchor tags and icons */
+
+section#contact .button-services a,
+section#contact i{
+    display: inline-block;
+    padding: .3em 1em;
+    border: .8px solid rgba(0, 0, 0, 0.132);
+    border-radius: 100px;
+    text-transform: capitalize;
+    font-size: .8rem;
+    font-weight: 500;
+    transition: .15s linear;
+}
+
+/* contact info anchor tags and icons hover effect */
+
+section#contact a:hover,
+section#contact i:hover{
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* contact info anchor tags spacing */
+
+section#contact a:nth-of-type(even){
+    margin-left: .8em;
+}
+
+/* contact info icons container */
+
+section#contact .contact-info-icons{
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    width: 75%;
+    margin-top: 1.2em;
+}
+
+/* contact info each icons */
+
+section#contact i{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* contact info text styles */
+
+section#contact .each-contact-info:last-child .text{
+    margin-bottom: 2em;
+}
+
+/* contact info texts with links styles */
+
+section#contact .each-contact-info .text a{
+    color: inherit;
+    transition: color var(--transition);
+}
+
+section#contact .each-contact-info .text a:hover{
+    background-color: inherit;
+    color: var(--primary);
+}
+
+/* contact form styles */
+
+
+/* inputs placeholder */
+
+::placeholder{
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+/* input styles */
+
+/* contact form input radio active effect */
+
+.name-and-email{
+    position: relative;
+    overflow: hidden;
+}
+
+section#contact input[type="radio"]{
+    position: absolute;
+    top: -300px;
+}
+
+#inputtext:checked ~ label[for="inputtext"],
+#inputmail:checked ~ label[for="inputmail"]{
+    border: 2px solid var(--primary);
+}
+
+section#contact .name-and-email label{
+    display: block;
+    width: calc(96% / 2);
+}
+
+/* inputs spacing */
+
+section#contact .name-and-email label:last-child{
+    margin-left: 4%;
+}
+
+section#contact input{
+    width: 100%;
+    height: 55px;
+    border: 1.8px solid rgba(0, 0, 0, .1);
+    padding: 0 1em;
+    transition: outline .15s;
+    border-radius: 4px;
+}
+
+/* input hover and active states */
+
+section#contact input:hover{
+    border: 2px solid var(--primary);
+    background-color: #f9f9f9;
+}
+
+/* contact form services */
+
+section#contact .form-services{
+    position: relative;
+    overflow: hidden;
+    margin: 1.6em 0;
+}
+
+/* contact form services checkbox active effect*/
+
+section#contact input[type="checkbox"]{
+    position: absolute;
+    top: -300px;
+}
+
+#form-service1:checked ~ label[for="form-service1"],
+#form-service2:checked ~ label[for="form-service2"],
+#form-service3:checked ~ label[for="form-service3"],
+#form-service4:checked ~ label[for="form-service4"]{
+    border: 2px solid var(--primary);
+}
+
+/* each contact form service styles, hover effect and spacing */
+
+section#contact .each-form-service{
+    width: calc(88% / 4);
+    height: 85px;
+    border: 1.8px solid rgba(0, 0, 0, .1);
+    display: block;
+    transition: border .05s linear;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+
+section#contact .each-form-service:hover{
+    border: 2px solid var(--primary);
+    background-color: #f9f9f9;
+}
+
+section#contact .each-form-service:not(:last-child){
+    margin-right: 4%;
+}
+
+/* contact form service icons */
+
+section#contact form .form-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: none !important;
+}
+
+section#contact form i{
+    border-radius: 0;
+    border: 0 !important;
+    color: var(--primary);
+    border: 1px solid;
+}
+
+section#contact form i:hover{
+    background-color: inherit;
+    color: var(--primary);
+}
+
+/* contact form service text */
+
+section#contact .each-form-service .text{
+    text-transform: capitalize;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* contact form textarea */
+
+section#contact textarea{
+    width: 100%;
+    min-width: 635.5px;
+    max-width: 635.5px;
+    height: 160px;
+    max-height: 160px;
+    border: 1.8px solid rgba(0, 0, 0, .1);
+    padding: 1.3em 0 0 1em;
+    transition: .1s linear;
+    border-radius: 4px;
+}
+
+section#contact textarea:hover{
+    background-color: #f9f9f9;
+    border: 2px solid var(--primary);
+}
+
+/* contct form button */
+
+section#contact form button{
+    float: right;
+    margin-top: 1.3em;
+    transition: var(--transition);
+}
+
+section#contact form button:hover{
+    background-color: var(--secondary);
+}
+/* END OF CONTACTS SECTION */
+
+/* FOOTER SECTION */
+
+footer{
+    padding: 4em 0;
+    justify-content: center;
+    font-size: .85rem;
+    opacity: .5;
+    letter-spacing: .4px;
+}
+
+/* footer divide */
+
+footer .divide{
+    display: inline-block;
+    margin: 0 2em;
+    opacity: .2;
+}
+
+footer a{
+    color: inherit;
+    transition: var(--transition);
+}
+
+footer a:hover{
+    color: var(--primary);
+}
+/* END OF FOOTER SECTION */
+
+
+/******** RESPONSIVENESS *********/
+
+@media screen and (max-width: 1499px){
+    
+    :root{
+        --uniform-width: 90%;
+    }
+
+    section#home {
+        height: initial;
+    }
+    
+    header {
+        width: 90.5% !important;
+    }
+
+    section#services .services-inner {
+        width: 74%;
+        padding: 7.35em 0;
+    }
+
+    section#home .home-body {
+        margin-top: 7.5em;
+        height: inherit;
+        justify-content: space-between;
+    }
+
+    section#home .home-body .left {
+        width: 40%;
+    }
+
+    section#home .home-body .left .image-and-hello{
+        flex-wrap: nowrap;
+
+    }
+
+    section#home .home-body .left .image-and-hello h3{
+        width: 53%;
+        height: 65px;
+        padding: .2em .3em;
+        border-radius: 60px;
+    }
+
+    section#home .home-body .left p{
+        width: 100%;
+        font-size: 1.8rem;
+        padding: .2em 0;
+    }
+
+    section#home .home-body .profile {
+        width: 35%;
+    }
+
+    section#home .white-circle {
+        width: 370px;
+        height: 370px;
+        top: -2em;
+        right: 0;
+    }
+
+    section#home .home-body .profile img{
+        margin: 0;
+    }
+
+    section#about .my-story {
+        padding: 6em 0 9em 0;
+        /* padding-bottom: 0 !important; */
+    }
+}
+
+
+@media screen and (max-width: 1399px){
+
+    :root{
+        --uniform-width: 79%;
+    }
+
+    header {
+        width: 79% !important;
+    }
+
+    header nav {
+        width: 60%;
+        margin-left: 1.5em;
+    }
+
+    section#home .home-body .left {
+        width: 49%;
+    }
+
+    section#contact textarea{
+        min-width: 0;
+    }
+
+}
+
+
+@media screen and (max-width: 1299px){
+
+    :root{
+        --uniform-width: 76.5%;
+    }
+
+    section#home .home-body .left {
+        width: 58%;
+    }
+
+    section#home .white-circle {
+        width: 350px;
+        height: 350px;
+        top: -5em;
+        right: 0;
+    }
+
+    section#home .home-body .profile img {
+        margin: 1em 1em 0 0;
+    }
+
+    .mystory-backg{
+        text-align: initial;
+        justify-content: space-between;
+    }
+
+    .mystory-backg h2{
+        margin: 0;
+        margin-left: .5em;
+        width: 30%;
+    }
+
+    .mystory-backg img{
+        position: static;
+        width: 37%;
+        margin-right: 1.7em;
+    }
+
+    .green-backg-inner {
+        width: 50% !important;
+    }
+
+    .gbi {
+        width: 65% !important;
+    }
+
+    section#services .services-inner {
+        width: 67%;
+    }
+}
+
+
+@media screen and (max-width: 990px){
+
+    :root{
+        --uniform-width: 70%;
+    }
+
+    header{
+        position: fixed !important;
+        top: 1.3em;
+        left: 14%;
+        background: #fff;
+        box-shadow: 0px 3px 30px rgba(131, 124, 124, 0.8);
+        border-radius: 10px;    
+    }
+
+    header,
+    .sticky{
+        width: 72% !important;
+        left: 14%;
+        align-items: flex-start !important;
+        /* height: 16.9em; */
+        height: none;
+        min-height: 5em;
+        overflow: hidden;
+        transition: min-height .5s ease;
+    }
+
+    #dropdown:checked ~ header,
+    #dropdown:checked ~ .sticky{
+        min-height: 16.9em;
+    }
+
+    header .logo{
+        color: #000 !important;
+        position: relative;
+        bottom: -4px;
+        left: 30%;
+    }
+
+    header .contact,
+    .sticky .contact{
+        color: var(--primary);
+        top: 15px !important;
+    }
+
+    header .contact span:first-child{
+        background: var(--primary);
+        color: #fff;
+    }
+
+    header .bars-container{
+        position: relative;
+        width: 2em;
+        height: 2em;
+        cursor: pointer !important;
+        justify-content: center;
+        align-items: center;
+        right: 4em;
+        top: 5px;
+    }
+
+    header .bars{
+        width: 100%;
+        height: 2px;
+        background: #000;
+        position: relative;
+        display: block;
+    }
+
+    header .bars::before,
+    header .bars::after{
+        height: 2px;
+        width: 75%;
+        content: '';
+        position: absolute;
+        display: block;
+        background: #000;
+        left: 0;
+    }
+
+    header .bars::before{
+        top: -10px;
+    }
+
+    header .bars::after{
+        top: 10px;
+    }
+
+    header nav,
+    .sticky nav{
+        position: relative;
+        height: 2em;
+        top: 20%;
+        left: -18.5%;
+    }
+
+    header ul{
+        position: absolute;
+        top: 3.2em;
+        left: 0;
+    }
+
+    .sticky ul{
+        top: 0;
+    }
+
+    #dropdown:checked ~ .sticky {
+        min-height: 19.9em;
+    }
+
+    .sticky ul{
+        top: 40px;
+    }
+
+    header li,
+    .sticky li{
+        display: block;
+        margin-left: 0 !important;
+        margin: .5em 0 .8em 0 !important;
+        padding: 0;
+    }
+
+    header li:last-child,
+    .sticky li:last-child{
+        margin-bottom: 0 !important;
+    }
+
+    header nav a,
+    .sticky nav a{
+        color: #000;
+        font-weight: 400;
+        opacity: .8;
+    }
+
+    header .active {
+        width: 100%;
+        margin-top: 0;
+        height: 1.5px;
+    }
+
+    section#home{
+        height: 60em;
+    }
+
+    section#home .background-image > img{
+        width: 210%;
+        margin-left: 7.5px;
+    }
+
+    section#home .home-body{
+        margin-top: 12em;
+    }
+
+    section#home .home-body > div{
+        width: 100% !important;
+    }
+
+    section#home .home-body .left .image-and-hello h3 {
+        width: 40%;
+    }
+
+    section#home .home-body .left p {
+        width: 78%;
+    }
+
+    section#home .white-circle{
+        top: 0;
+        right: 22%;
+        width: 380px;
+        height: 380px;
+    }
+
+    section#home .home-body .profile img {
+        width: 60%;
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 18px;
+        display: flex;
+        justify-content: center;
+    }
+
+    section#about .my-story {
+        padding: 6em 0;
+    }
+
+    section#about .my-story .image-on-the-left,
+    section#about .my-story .info-on-the-right {
+        width: 100%;
+    }
+
+    section#about .my-story .info-on-the-right {
+        margin-top: 2.8em;
+    }
+
+    section#about .mystory-backg img {
+        width: 23%;
+    }
+
+    section#about .mystory-backg h2 {
+        margin-left: 0;
+        width: 70%;
+        text-align: right;
+        font-size: 2.2rem;
+    }
+
+    section#about .stats-inner > div{
+        width: 100%;
+    }
+
+    section#about .info-stats {
+        margin-left: 0;
+        margin-top: 3.3em;
+    }
+
+    section#about .info-stats .vertical-line {
+        width: 39%;
+        left: 24%;
+    }
+
+    section#about .clients .client-logo {
+        justify-content: flex-start;
+    }
+
+    section#about .clients img {
+        width: 19.3%;
+        margin-left: 5.9em;
+    }
+
+    section#about .clients img:first-child,
+    section#about .clients img:nth-child(4){
+        margin-left: 0;
+    }
+
+    section#about .clients img:nth-child(4),
+    section#about .clients img:last-child{
+        margin-top: 4em;
+    }
+
+    .g-backg img {
+        width: 50% !important;
+    }
+
+    .green-backg h2 {
+        font-size: 2.2rem;
+    }
+
+    section#services .services-group {
+        flex-wrap: wrap;
+    }
+
+    section#services .group {
+        width: 100%;
+    }
+
+    section#services .right-group {
+        margin-left: 0;
+        margin-top: 1.7em;
+    }
+
+    section#projects .projects-container {
+        flex-wrap: wrap;
+    }
+
+    section#projects .each-project {
+        width: calc(96% / 2);
+        height: 27em;
+    }
+
+    section#projects .each-project:not(:first-child) {
+        margin-left: 4%;
+    }
+
+    section#projects .each-project:last-child {
+        margin-left: 0;
+        margin-top: 2em;
+    }
+
+    section#contact .g-backg {
+        width: 67%;
+    }
+
+    section#contact .green-backg-inner img {
+        width: 56% !important;
+    }
+
+    section#contact .contact_info, section#contact form {
+        width: 100%;
+    }
+
+
+    section#contact .each-contact-info {
+     width: calc(97% / 2);
+     margin: 0 auto;
+    }
+
+    section#contact .each-contact-info:last-child {
+        margin-left: 3%;
+    }
+
+    section#contact form {
+        margin-left: 0;
+        margin-top: 2.5em;
+    }
+
+    section#contact .each-form-service {
+        width: calc(192% / 4);
+    }
+
+    section#contact .second{
+        margin-right: 0 !important;
+    }
+
+    section#contact .third,
+    section#contact .fourth{
+        margin-top: 1.7em;
+    }
+
+    section#contact textarea {
+        width: 100%;
+        max-width: 692px;
+    }
+
+    section#contact form button {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px){
+
+    :root{
+        --uniform-width: 69%;
+    }
+
+    section#home {
+        height: 50em;
+    }
+
+    section#home .home-body{
+        width: 65% !important;
+    }
+
+    section#home .home-body .left .image-and-hello h3,
+    section#home .home-body p {
+        font-size: 2.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    section#home .home-body .left .image-and-hello h3 {
+        width: 52%;
+    }
+
+    section#home .home-body .left p {
+        width: 105%;
+        text-align: left;
+    }
+
+    section#home .background-image > img {
+        width: 285%;
+    }
+
+    section#home .white-circle {
+        top: 87px;
+        right: 11%;
+        width: 370px;
+        height: 370px;
+    }
+
+    section#home .home-body .profile img {
+        width: 73%;
+        margin-top: 117px;
+    }
+
+    section#about .mystory-backg h2 {
+        width: 52%;
+        margin: 0 auto;
+    }
+
+    section#about .mystory-backg img {
+        width: 30%;
+    }
+
+    section#about .info-stats .top-and-bottom-num-tag {
+        margin: 0 auto;
+    }
+
+    section#about .info-stats .vertical-line {
+        width: 60%;
+        left: 21%;
+    }
+
+    section#about .clients img {
+        width: 17.4%;
+        margin-left: 5.9em;
+    }
+
+    .green-backg-inner {
+        width: 69% !important;
+    }
+
+    .g-backg img {
+        width: 48% !important;
+    }
+
+    section#projects .g-backg {
+        width: 100%;
+        float: none;
+    }
+
+    section#projects .each-project {
+        width: 100%;
+        height: 39em;
+    }
+
+    section#projects .each-project:not(:first-child) {
+        margin-left: 0;
+        margin-top: 2.6em;
+    }
+
+    section#contact .g-backg {
+        width: 100%;
+        float: none;
+    }
+
+    section#contact .green-backg-inner img {
+        width: 50% !important;
+    }
+
+    section#contact .contact_info {
+        flex-wrap: wrap;
+    }
+
+    section#contact .each-contact-info {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        padding-top: 2.8em;
+        height: 21em;
+    }
+
+    section#contact .each-contact-info:last-child {
+        margin-left: 0;
+        margin-top: 2px;
+        border-radius: 0 0 20px 20px;
+    }
+
+    section#contact .button-services {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 95%;
+    }
+
+    section#contact .button-services div{
+        margin-top: 0 !important;
+    }
+
+    section#contact .button-services div:last-child{
+        display: none;
+    }
+
+    section#contact .button-services a{
+        margin-left: 0
+    }
+
+    section#contact .button-services a:nth-child(3),
+    section#contact .button-services a:nth-child(4){
+        display: inherit !important;
+    }
+
+    section#contact .contact-info-icons {
+        width: 42%;
+    }
+}
+
+@media screen and (max-width: 575px){
+
+    :root{
+        --uniform-width: 94%;
+    }
+
+    header, .sticky {
+        width: 96% !important;
+        left: 3%;
+    }
+
+    header .contact, .sticky .contact {
+        transform: scale(.9);
+        right: 0;
+    }
+
+    header .logo {
+        left: 24%;
+    }
+
+    header .bars-container {
+        right: 3em;
+    }
+
+    section#home .home-body {
+        width: 86% !important;
+    }
+
+    section#home .background-image > img {
+        width: 359%;
+    }
+
+    section#home .home-body .profile img {
+        margin-top: 121px;
+    }
+
+    section#about .clients img {
+        width: 22.4%;
+        margin-left: 4.9em;
+    }
+
+    section#about .clients .client-logo {
+        width: 89%;
+    }
+
+    section#about .clients h2 {
+        font-size: 1.9rem;
+    }
+
+    section#services .services-inner {
+        width: 94%;
+    }
+}
+
+@media screen and (max-width: 575px){
+
+
+    section#home .background-image > img {
+        width: 440%;
+    }
+
+    section#home .home-body .left .image-and-hello h3 {
+        width: 64%;
+    }
+
+    section#home .home-body .left p {
+        width: 101%;
+        font-size: 1.7rem;
+        padding: .2em 1em;
+    }
+
+    section#home .white-circle {
+        right: 4%;
+    }
+
+    section#home .home-body .profile img {
+        margin-top: 107px;
+        width: 92%;
+    }
+
+    section#about .info-stats .horizontal-line {
+        right: 0em;
+    }
+
+    section#about .info-stats .top-and-bottom-num-tag {
+        width: 96%;
+    }
+
+    section#about .clients h2 {
+        font-size: 1.6rem;
+    }
+
+    section#about .clients img {
+        width: 22%;
+        margin-left: 3.5em;
+    }
+
+    section#about .clients .client-logo {
+        width: 92%;
+    }
+
+    header .contact span:first-child {
+        margin-right: .2em;
+    }
+
+    section#projects .each-project {
+        height: 34em;
+    }
+
+}
