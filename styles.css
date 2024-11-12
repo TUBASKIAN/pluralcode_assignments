@@ -4,15 +4,13 @@
 
 /* root styles */
 
-/* :root{
-    --primary: #14b789;
-    --secondary: #535da1;
-    --tetiary: #f9f9f9;
-    --border-color: #e9eaeb;
+:root{
+    --primary: rgb(193, 17, 25);
+    --hover-color: rgb(153, 22, 29);
     --text-color: #717275;
-    --uniform-width: 76.5%;
+    /* --uniform-width: 76.5%; */
     --transition: .25s ease-in-out;
-} */
+}
 
 /* general styles */
 
@@ -40,7 +38,6 @@ body{
 
 ::selection{
     color: white;
-    background: var(--primary);
 }
 
 /* GENERAL STYLES */
