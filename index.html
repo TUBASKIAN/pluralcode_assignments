@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HELLO WORLD</h1>
+    <!-- inline js -->
+    <button onclick="alert('hello page');">click me</button>
+    <p onclick="alert('this is an alert');">this is a paragraph</p>
+
+    <button id="btn">click me</button>
+
+    <!-- internal js -->
+    <script>
+        // alert('hello page');
+        console.log('hello console');
+
+        // using dom(document object method)
+        let btn = document.getElementById('btn')
+        btn.addEventListener('click', () => {
+            alert('using dom method')
+        });
+    </script>
+    <!-- external js -->
+    <script src="script.js"></script>
+</body>
+</html>
